@@ -58,3 +58,31 @@ console.log(2*2);
 console.log(2**3);//exponent 2^3=2*2*2
 console.log(2/3);//divide
 console.log(2%3);//remainder
+
+ let str1="hello";
+ let str2 = " hitesh";
+ console.log(str1+str2);//can only be  added
+ console.log("1"+2);
+ console.log(1+"2");
+ console.log("1"+2+2);//why 122 not 14 ?
+ console.log(1+2+"2");//AYEIN why 32?? why not 122 again
+ //if string is first whole will be treated as a string whereas if number is first it will go arthematic operations
+ 
+ 
+ console.log( 3 + 4 * 5 % 3);// its completely wrong we must use paranthesis to reduce complexity
+
+ console.log((3+4)*(5%3));//use paranthesis 
+
+console.log(true);// give true as a result
+console.log(+true);//give 1 as it is boolean we have shown increment so it gets converetd into number(give value)
+//console.log(true+);// will give errorr
+console.log(+"");//give 0
+let num1 , num2 , num3;
+num1 = num2 = num3 = 2+2;
+let gameCounter = 100;
+gameCounter++ ;
+console.log(gameCounter);
+++gameCounter ;
+console.log(gameCounter);
+
+//prefix and postfix JS and MDN
