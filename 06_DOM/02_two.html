@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | chai air code</title>
+</head>
+<body style="background-color : black; color : white">
+    <div class="parent">
+        <!-- this is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    <script>
+        const parent = document.querySelector('.parent')
+        // console.log(parent);
+        // console.log(parent.children)
+        // console.log(parent.children[1].innerText)
+        
+        // //HTML collection and Nodelist has array like properties exceptions are some loops not work on one another
+
+        //for loop will work here
+        // console.log(parent.children.length);
+        // for (let i = 0; i < parent.children.length; i++) {
+        // console.log(parent.children[i].innerHTML)
+        // }
+        // parent.children[1].style.color = "orange"
+        // console.log(parent.firstElementChild)
+        // console.log(parent.lastElementChild.innerHTML)
+
+        const dayOne = document.querySelector('.day')//will select the first one having class day
+        console.log(dayOne);
+
+        ////querySelector is expensive operation h pura operation kr raha h thread k through jaa raha h ,,pure tree ko traves krna ,, now we can instead of new tree traves we can go through dayOne to parent element  using PARENTELEMENT
+        //full performance
+        //going through thread
+        //tree ko traves krna(chhan been krna check krna) 
+        
+        console.log(dayOne.parentElement);
+        console.log(dayOne.nextElementSibling);
+        // console.log(dayOne.previousElementSibling); nothing not a command ///NO COMMAND
+
+        console.log("nodes: ", parent.childNodes);//9
+//Dom is a tree model where everything has its importance
+//line break too has significance importance and counted as node 
+//one or mre line break in a row will be considered as 1 node
+        //0:text ----enter kra usko text mana
+        //1:div.day
+         //3:text ----enter kra usko text mana
+        //4:div.day
+         //5:text ----enter kra usko text mana
+        //6:div.day
+         //7:text ----enter kra usko text mana
+        //8:div.day
+         //9:text ----enter kra usko text mana
+//after adding comment nodes goes to 11 as one enter and second is comment
+        //namn_2809
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAI AUR CODE||DOM</title>
+</head>
+<body style="background:black ; color:white">
+    <ul class="language">
+        <li>Java script</li>
+    </ul>
+</body>
+<script>
+//    const addLanguage=(langName)=>{
+//     const li=document.createElement('li');
+//     console.log(li);
+//     li.setAttribute("class","list2")
+//     li.innerText = `${langName}`
+//     document.querySelector('.language').appendChild(li)
+    
+//    }
+//    addLanguage("python")
+//    addLanguage("ruby")
+// //    it has to traves all the list to add it n last
+// //what if there are more than a lakh entities
+// //so optimisation is important for that
+
+// function addOptiLanguage(langName){
+//     const li = document.createElement('li')
+//     li.appendChild(document.createTextNode(langName))
+//     document.querySelector('.language').appendChild(li)
+// }
+// addOptiLanguage('golang')
+
+
+// //edit
+// //first of all select
+
+// const secondLang = document.querySelector("li:nth-child(2)")
+// // secondLang.innerHTML="mojo"
+// const newli = document.createElement('li')
+// newli.textContent = 'mojo';
+// secondLang.replaceWith(newli)
+
+
+// //edit javascript
+
+// const firstLang = document.querySelector("li:first-child")
+// firstLang.outerHTML = '<li>TYpescript</li>'
+
+
+// //remove goLang
+// const lastLang = document.querySelector('li:last-child')
+// langLang.remove()
+
+const language = document.querySelector(".language")
+const addLanguage = function(name){
+    const li = document.createElement("li");
+    const Text = document.createTextNode(name)
+    li.appendChild(Text);
+    language.appendChild(li)
+}
+addLanguage("python");
+addLanguage("ruby");
+
+const list = document.querySelectorAll("li")
+console.log(list);
+const remove = (name)=>{
+    list.forEach((element)=>{
+        if(name===element.innerText){
+            element.remove();
+        }
+    })
+}
+// remove("python")
+// remove("ruby")
+// remove("Java script")
+</script>
+</html>

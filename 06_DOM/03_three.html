@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body style="background:black ; color:white" >
+    
+</body>
+<script>
+    // const div = document.createElement('div');
+    // console.log(div);
+    // div.className = "main";
+    // div.id = Math.round(Math.random()*10)+1;
+    // div.setAttribute("title", "meri cha")
+    // div.style.backgroundColor='green';
+    // div.style.padding = "12px";
+    // // div.innerText= "chai aur code"
+    // const addText=document.createTextNode("chai aur Code")
+    // div.appendChild(addText)
+    // document.body.appendChild(div)
+
+    //programmers prefer to use setAttribute insted of className , innerText etc 
+    //as the commands like classNamw overwrite the content -->firstly bring the original one's refernce then replace it
+    //whereas setAttribute just insert it
+    //which saves 1 round GOOD FOR OPTIMISATION
+
+
+    const myName = document.createElement("div");
+    console.log(myName);
+    myName.setAttribute("class","Simar");
+    myName.setAttribute("id","Sardar Ji");
+    myName.style.backgroundColor="aliceblue";
+    myName.style.color="crimson";
+
+    const myText = document.createTextNode("My Name is SIMARPREET SINGH");
+    myName.append(myText);
+
+    document.body.append(myName);
+
+
+</script>
+</html>
