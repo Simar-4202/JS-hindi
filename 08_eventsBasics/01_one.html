@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color:aliceblue">
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images" type="none">
+            <li><img width="200" id="japan" src="images/japan1.jpg" alt="japan"></li>
+            <li><img width="200" id="china" src="images/china1.jpg" alt="china"></li>
+            <li><img width="200" id="mountain" src="images/mountain1.jpg" alt="mountain"></li>
+            <li><img width="200" id="snow" src="images/mountain2.jpg" alt="snow"></li>
+            <li><img width="200" id="snow" src="images/bird1.jpg" alt="bird" onclick="alert('parrot')"></li><!-- it can work (not feasible)but will create problems whn scaling a website //can use react like this as its a framework-->
+            <li><a href="https://google.com" id="google"><font color="aliceblue">Google</font></a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //javascript mai sb events sequencing mai chlte h kuch exceptions h but js is sequencial language
+    //ascynchronous code
+    
+    // document.getElementById("japan").onclick = ()=>{
+    //     alert("japan temple")
+    // }//give less feature
+
+    //this is to not a good approach
+    //instead use event listeners they dont only give you ability to modify the click event but propogration ability tooo
+
+     //attachEvent()//used in early time at time of problems in internet explorer
+    //jQuery - onclick,onmouseover
+
+    //type, timestamp, defaultPrevented, 
+   // target , toElement , srcElement , currentTarget
+   // clientX , clientY , screenX , screenY , offset
+   //altkey , ctrlkey , shiftkey , keyCode 
+
+
+//     document.getElementById('japan').addEventListener('click',function(){
+//         // prompt("did u clicked it")
+//         alert("japan clicked")
+//     },false)//default false h isle likhte nhi h
+//     //some application didnt work without true or false isliye tb yeh likhna pdhta h
+// //one more approach
+//    document.getElementById('china').addEventListener("click",(e)=>{
+//     console.log(e);//pointerEvent a object gives a lot of info(events of browser and environment)
+//    },true)
+   
+//    //event propogation 
+// //    true false //no differnce will be seen
+// //false--> event bubbling //default
+// // true --> event capturing
+
+// document.getElementById('images').addEventListener("click",(e)=>{
+//     console.log("clicked inside the ul");
+// },false);
+
+// document.getElementById('snow').addEventListener("click",(e)=>{
+//     console.log("mountain clicked");
+// },false)//mountain clicked first printed but it is sequencial???what is this
+//it goes inside to outside
+
+// document.getElementById('images').addEventListener("click",(e)=>{
+//     console.log("clicked inside the ul");
+// },true);
+
+// document.getElementById('snow').addEventListener("click",(e)=>{
+//     console.log("mountain clicked");
+// },true)//first clicked ul then mountain clicked
+//everything depends on usecase if bubbling event is important then false if capturing then true
+
+//but if you want ki bubbling na ho bahr wala event alg rahe aur andr wala alg then we use e.stopPropagation()
+// document.getElementById('images').addEventListener("click",(e)=>{
+//     console.log("clicked inside the ul");
+// },false);
+// document.getElementById('snow').addEventListener("click",(e)=>{
+//     console.log("mountain clicked");
+//     e.stopPropagation();
+// },false)
+//will differenciate ul and mountain clicked no bubbling
+
+//lets change default behaviour of link 
+// document.getElementById('google').addEventListener('click',(e)=>{
+//     e.preventDefault();
+//     e.stopPropagation();
+//     console.log("google clicked");
+// },false)
+
+
+//click images and it disappears
+// document.querySelector('#images').addEventListener('click',(e)=>{
+//     // console.log(e);
+//     // console.log(e.target);
+//     console.log(e.target.parentNode);//it will select parent node who is parent img ka parent li elementt h or uska ul here we select li
+//     let removeIt = e.target.parentNode;
+//     removeIt.remove();
+//     // removeIt.parentNode.removeChild(removeIt)//parent ul to removechild then again to ul 
+// },false)
+
+
+document.querySelector('#images').addEventListener('click',(e)=>{
+    // console.log(e);
+    // console.log(e.target);
+    console.log(e.target.tagName);//it will select 
+    if(e.target.tagName === "IMG"){
+        console.log(e.target.id);
+    let removeIt = e.target.parentNode;
+    removeIt.remove();
+    } 
+},false)
+
+
+</script>
+</html>

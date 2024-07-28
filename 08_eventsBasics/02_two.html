@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+    // setTimeout(function(){
+    //     console.log("hitesh");//hitesh will be printed after 2 second
+    // },2000);//not a core js they are features of browser
+    //handler a function not having name
+
+    //interval
+    //repeating the same thing after a piece of tie
+
+    const sayHitesh= function(){
+        console.log("hitesh");
+    }
+    setTimeout(sayHitesh, 2000)
+    // setInterval(sayHitesh, 2000)
+
+    // document.querySelector("h1").innerHTML="best JS series"//want ki yeh kaam 2 second baad ho
+
+    const changeText=()=>{
+        document.querySelector("h1").innerHTML="best JS Series"
+    }
+    const changeMe = setTimeout(changeText,2000);
+
+
+    //clearTimeout
+    clearTimeout()//ese ni chlega it needs reference
+    // clearTimeout(changeMe)//means cleared the callbacks which were in queue
+
+    document.querySelector("#stop").addEventListener("click",()=>{
+        clearTimeout(changeMe)
+        console.log("STOPPED");
+    })
+
+</script>
+</html>
