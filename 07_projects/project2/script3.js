@@ -13,6 +13,6 @@ form.addEventListener("submit",(e)=>{
     }
     else{
         const bmi = weight/(height*height);
-        if(bmi)
+        if(bmi){}
     }
 })
