@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color:aliceblue">
+    <!-- fetch come 5 years before but before that we too request API-->
+     <!--XMl http request is used for that XMLHttpRequest.readyState -->
+
+     <!-- 0 UNSENT Client has been created. open() not called yet -->
+     <!-- 1. OPENED open() has been called -->
+     <!-- 2. HEADERS_RECEIVED send() has been called, and headers and status are available -->
+     <!-- 3. LOADING downloading; responseText holds partial Data -->
+     <!-- 4. DONE the operation is complete -->
+     
+</body>
+<script>
+    requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    //first of all make object
+    //Ajax() request
+    // XMLHttpRequest -- its a class we have to make it object
+    const xhr = new XMLHttpRequest()//new means new object bna rahe h
+    xhr.open('GET', requestUrl)//open request ko bhejta h after baking xmlhttprequest //method(kis type ki request GET POST payload) and then string
+    // console.log(xhr.readyState);
+    // continuously track krne k liye change the state
+    xhr.onreadystatechange=function(){
+    console.log(xhr.readyState);
+    if(xhr.readyState === 4){
+        console.log(`hello ${this.responseText}`);
+        // const Data = this.responseText;
+        const Data = JSON.parse(this.responseText);
+        console.log(Data.followers);//undefined as json is string not object
+        console.log(typeof Data);//response jb bhi ata h url se vo string ata h 
+        //now json.parse is used parse will convert string to json
+
+    }
+    }
+    xhr.send()//to call open
+</script>
+</html>
